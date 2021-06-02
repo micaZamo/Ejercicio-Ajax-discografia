@@ -1,0 +1,26 @@
+img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+}
+
+.tarjeta {
+  position: relative;
+  display: inline-block;
+  opacity: 0.6;
+  border: 1px solid black;
+  border-radius: 4px;
+  margin: 10px;
+}
+
+.tarjeta > p {
+  text-align: center;
+}
+
+.tarjeta:hover {
+  opacity: 1;
+  background-color: antiquewhite;
+  box-shadow: 5px 5px 5px #888;
+  top: -5px;
+  left: -5px;
+}

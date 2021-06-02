@@ -1,0 +1,22 @@
+{
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "name": "ejercicio-ajax-discografia",
+  "description": "",
+  "version": "1.0.0",
+  "main": "servidor.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/micaZamo/Ejercicio-Ajax-discografia.git"
+  },
+  "author": "Micaela Zamorano",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/micaZamo/Ejercicio-Ajax-discografia/issues"
+  },
+  "homepage": "https://github.com/micaZamo/Ejercicio-Ajax-discografia#readme"
+}

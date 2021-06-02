@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ARTISTAS</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Consulta de discos</h1>
+    <h3>
+      Podes consultar los discos por título, año de lanzamiento o artista.
+    </h3>
+    <form action="/discos" method="GET">
+      <input type="text" name="titulo" id="titulo" placeholder="Titulo" />
+      <input type="text" name="lanzamiento" id="anio" placeholder="Año" />
+      <input type="text" name="artista" id="artista" placeholder="Artista" />
+      <input type="submit" value="VER" id="btn-ver" />
+    </form>
+    <div id="div-contenedor">
+      <div class="tarjetas">
+        <h1 id="tit-cargado"></h1>
+        <h3 id="artista-cargado"></h3>
+        <img id="img-cargada" />
+        <p id="anio-cargado"></p>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
