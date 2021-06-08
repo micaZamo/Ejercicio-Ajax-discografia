@@ -14,7 +14,7 @@ app.get("/", function (req, res) {
 });
 
 app.get("/disco", function (req, res) {
-  let listaDiscos = discos;
+  let listaDiscos = discos.discos;
   if (req.query.artista) {
     listaDiscos = listaDiscos.filter(function (elemento) {
       if (elemento.artista.includes(req.query.artista)) {
@@ -44,7 +44,7 @@ app.get("/disco", function (req, res) {
       }
     });
   }
-  res.sendFile(discos);
+  res.send(listaDiscos);
 });
 
 app.listen(PUERTO, function () {

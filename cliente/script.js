@@ -20,18 +20,18 @@ btnVer.addEventListener("click", function () {
       imagen.src = discoi.tapa;
     }
   });
-  let filtros = "";
+  let filtros = "?";
   if (tit.value) {
-    filtros += "titulo" + titulo;
+    filtros += "titulo" + tit.value;
   }
 
   if (art.value) {
-    filtros += (filtros ? "&" : " ") + "artista" + artista;
+    filtros += (filtros ? "&" : " ") + "artista" + art.value;
   }
 
   if (lanz.value) {
-    filtros += (filtros ? "&" : " ") + "lanzamiento" + lanzamiento;
+    filtros += (filtros ? "&" : " ") + "lanzamiento" + lanz.value;
   }
-  xhr.open("GET", "/discos" + filtros);
+  xhr.open("GET", "/disco" + filtros);
   xhr.send();
 });
