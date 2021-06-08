@@ -2,7 +2,7 @@ const express = require("express");
 const app = express();
 const path = require("path");
 const discos = require("./discos.json");
-const PUERTO = 4040;
+const PUERTO = 4042;
 
 //Mildware para recursos estaticos
 app.use(express.static(`${__dirname}/cliente`));
@@ -14,20 +14,37 @@ app.get("/", function (req, res) {
 });
 
 app.get("/disco", function (req, res) {
-  const listaDiscos = JSON.parse(discos);
-  const tituloIngresado = req.body.titulo;
-  const artistaIngresado = req.body.artista;
-  const anioIngresado = req.body.lanzamiento;
+  let listaDiscos = discos;
+  if (req.query.artista) {
+    listaDiscos = listaDiscos.filter(function (elemento) {
+      if (elemento.artista.includes(req.query.artista)) {
+        return true;
+      } else {
+        return false;
+      }
+    });
+  }
 
-  let tituloFiltrado = listaDiscos.filter(function (elemento) {
-    if (elemento.titulo === tituloIngresado) {
-      return true;
-    } else {
-      return false;
-    }
-  });
+  if (req.query.titulo) {
+    listaDiscos = listaDiscos.filter(function (elemento) {
+      if (elemento.titulo.includes(req.query.titulo)) {
+        return true;
+      } else {
+        return false;
+      }
+    });
+  }
 
-  res.send(listaDiscos);
+  if (req.query.lanzamiento) {
+    listaDiscos = listaDiscos.filter(function (elemento) {
+      if (elemento.lanzamiento.includes(req.query.lanzamiento)) {
+        return true;
+      } else {
+        return false;
+      }
+    });
+  }
+  res.sendFile(discos);
 });
 
 app.listen(PUERTO, function () {
